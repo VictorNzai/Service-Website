@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #6c63ff;
+    --primary-color: #4F46E5;
     --secondary-color: #4a90e2;
     --text-color: #333;
     --light-gray: #f5f5f5;
@@ -96,11 +96,28 @@ nav {
     margin-top: 2rem;
 }
 
-.service-card {
+/* .service-card {
     background: white;
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+} */
+.service-card img {
+    width: 100%;
+    height: 200px;
+    /* Adjust the height as needed */
+    object-fit: cover;
+    /* Ensures the image covers the area without distortion */
+}
+
+.service-card {
+    width: 300px;
+    /* Adjust the width as needed */
+    margin: 10px;
+}
+
+.service-content {
+    text-align: center;
 }
 
 .service-icon {
@@ -127,16 +144,63 @@ nav {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.work-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
 .work-card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
+
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
-.work-card h3, .work-card p {
+/* .work-card h3,
+.work-card p {
     padding: 1rem;
+} */
+.work-card h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+.work-card p {
+    line-height: 1.6;
+    margin: 0 1rem 1rem 1rem;
+}
+.work-link {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 1rem;
+    font-size: 16px;
+    color: #fff;
+    background-color: var(--project-theme-color, #007BFF); /* Use CSS variable for theme color */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.work-link:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.work-card img:hover {
+    transform: scale(1.05);
 }
 
 /* CTA Section */
@@ -190,6 +254,8 @@ footer {
     margin-top: 1rem;
 }
 
+
+
 .footer-section ul li {
     margin-bottom: 0.5rem;
 }
@@ -209,4 +275,29 @@ footer {
     text-align: center;
     padding-top: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile responsiveness */
+
+.featured-work {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.work-card {
+    flex: 1 1 calc(33.333% - 20px); /* 3 cards per row with 20px gap */
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .work-card {
+        flex: 1 1 calc(50% - 20px); /* 2 cards per row on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .work-card {
+        flex: 1 1 100%; /* 1 card per row on mobile */
+    }
 }
