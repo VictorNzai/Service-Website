@@ -27,24 +27,28 @@ header {
 
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    gap: 2rem;
 }
 
 .logo {
-    display: flex;
+    /* display: flex;
     align-items: center;
     font-weight: bold;
+    font-size: 1.5rem; */
+    font-weight: bold;
     font-size: 1.5rem;
+    margin-right: auto;
 }
 
-.logo-dot {
+/* .logo-dot {
     width: 8px;
     height: 8px;
     background: var(--primary-color);
     border-radius: 50%;
     margin-right: 8px;
-}
+} */
 
 .nav-links {
     display: flex;
@@ -55,6 +59,15 @@ nav {
 .nav-links a {
     text-decoration: none;
     color: var(--text-color);
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 5px;
 }
 
 /* Hero Section */
@@ -107,7 +120,7 @@ nav {
     height: 200px;
     /* Adjust the height as needed */
     object-fit: cover;
-    border-radius:20px;
+    border-radius: 20px;
     /* Ensures the image covers the area without distortion */
 }
 
@@ -129,9 +142,17 @@ nav {
     margin-bottom: 1rem;
 }
 
-/* Work Section */
-#work {
+/* Work Section Preferred  */
+.featured-work {
     padding: 5rem 5%;
+    background: var(--primary-color);
+    color: white;
+    text-align: center;
+}
+
+.featured-work h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
 }
 
 .work-grid {
@@ -144,8 +165,70 @@ nav {
 .work-card {
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: white;
+    color: var(--text-color);
+}
 
+.work-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.work-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.work-card h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+.work-card p {
+    line-height: 1.6;
+    margin: 0 1rem 1rem 1rem;
+}
+
+.work-link {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 1rem;
+    font-size: 16px;
+    color: #fff;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.work-link:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.work-card img:hover {
+    transform: scale(1.05);
+}
+
+/* 
+/* Work Section 
+#work {
+padding: 5rem 5%;
+    background: white;}
+
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.work-card {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -162,17 +245,13 @@ nav {
     width: 100%;
     height: 200px;
     object-fit: cover;
-
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
     transition: transform 0.3s ease;
 }
 
-/* .work-card h3,
+ .work-card h3,
 .work-card p {
     padding: 1rem;
-} */
+} 
 .work-card h3 {
     font-size: 1.5rem;
     margin: 1rem 0;
@@ -182,13 +261,14 @@ nav {
     line-height: 1.6;
     margin: 0 1rem 1rem 1rem;
 }
+
 .work-link {
     display: inline-block;
     padding: 10px 20px;
     margin: 1rem;
     font-size: 16px;
     color: #fff;
-    background-color: var(--project-theme-color, #007BFF); /* Use CSS variable for theme color */
+    background-color: var(--primary-color);
     border: none;
     border-radius: 5px;
     text-decoration: none;
@@ -202,7 +282,7 @@ nav {
 
 .work-card img:hover {
     transform: scale(1.05);
-}
+} */
 
 /* CTA Section */
 #cta {
@@ -287,18 +367,108 @@ footer {
 }
 
 .work-card {
-    flex: 1 1 calc(33.333% - 20px); /* 3 cards per row with 20px gap */
+    flex: 1 1 calc(33.333% - 20px);
+    /* 3 cards per row with 20px gap */
     box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
     .work-card {
-        flex: 1 1 calc(50% - 20px); /* 2 cards per row on tablets */
+        flex: 1 1 calc(50% - 20px);
+        /* 2 cards per row on tablets */
     }
 }
 
 @media (max-width: 480px) {
     .work-card {
-        flex: 1 1 100%; /* 1 card per row on mobile */
+        flex: 1 1 100%;
+        /* 1 card per row on mobile */
     }
 }
+
+/* Contact Form */
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 5rem 5%;
+    background: var(--light-gray);
+    color: var(--text-color);
+}
+
+.contact-info {
+    flex: 1;
+    text-align: center;
+}
+
+.contact-info h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.contact-info p {
+    margin-bottom: 2rem;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.contact-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.contact-form {
+    flex: 1;
+    max-width: 600px;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .form-group {
+    margin-bottom: 1rem;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    background: var(--primary-color);
+    color: white;
+    transition: transform 0.2s;
+}
+
+.contact-form button:hover {
+    transform: translateY(-2px);
+}
+
