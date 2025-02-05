@@ -107,6 +107,7 @@ nav {
     height: 200px;
     /* Adjust the height as needed */
     object-fit: cover;
+    border-radius:20px;
     /* Ensures the image covers the area without distortion */
 }
 
