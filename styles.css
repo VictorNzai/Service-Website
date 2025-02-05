@@ -59,7 +59,8 @@ nav {
     gap: 2rem;
     position: absolute;
     left: 50%;
-    transform: translateX(-50%); /* Centers the nav links */
+    transform: translateX(-50%);
+    /* Centers the nav links */
 }
 
 .nav-links a {
@@ -126,7 +127,7 @@ nav {
 .service-card img {
     width: 100%;
     height: 300px;
-    width:300px;
+    width: 300px;
     /* Adjust the height as needed */
     object-fit: cover;
     border-radius: 20px;
@@ -295,7 +296,8 @@ padding: 5rem 5%;
 
 /* CTA Section */
 #cta {
-    background: white; /* Remove any colored background */
+    background: white;
+    /* Remove any colored background */
     padding: 5rem 5%;
     display: flex;
     flex-direction: column;
@@ -436,8 +438,10 @@ footer {
     gap: 0.5rem;
     margin: 0.5rem 0;
 }
+
 .contact-submit {
-    background-color: #007bff; /* Adjust button color */
+    background-color: #007bff;
+    /* Adjust button color */
     color: white;
     padding: 0.8rem;
     border: none;
@@ -465,10 +469,12 @@ footer {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
 .contact-form form {
     display: flex;
     flex-direction: column;
 }
+
 .form-group {
     margin-bottom: 1rem;
 }
@@ -505,4 +511,3 @@ footer {
 .contact-form button:hover {
     transform: translateY(-2px);
 }
-
